@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node File Upload</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" style="margin-top: 100px;">
+            <div class="col s12 m8">
+                <div class="card-panel hoverable white lighten-4" style="padding-bottom: 100px;">
+                    <h3 class="teal-text">File Upload</h3>
+                    <form action="/upload" method="POST" enctype="multipart/form-data">
+                        <%= typeof msg != 'undefined' ? msg : '' %>
+                        <div class="file-field input-field">
+                            <div class="btn">
+                                <span>Choose File</span>
+                                <input type="file" name="image">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text">
+                            </div>
+                        </div>
+                        <button class="btn right pulse waves-effect waves-light pink accent-3" type="submit"
+                            name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col s12 m4">
+                <img src="<%= typeof file != 'undefined' ? file : '' %>" alt="" class="img-responsive"
+                    style="max-width: 300px; margin-top: 20px;">
+            </div>
+        </div>
+
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
